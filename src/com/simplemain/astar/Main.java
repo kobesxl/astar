@@ -1,4 +1,5 @@
 package com.simplemain.astar;
+import com.simplemain.astar.Point;
 
 
 public class Main
@@ -10,21 +11,21 @@ public class Main
 	static final char WALL    = 'W';  // 墙
 	static final char VISITED = '-';  // 被访问过
 	static final char ON_PATH = '@';  // 在结果路径上
-	
+
 	// 地图字符串
 	static final String[] S_MAP = {
-		". . . . . . . . . . . . . . . . . . . .", 
-		". . . W W W W . . . . . . . . . . . . .",
-		". . . . . . W . . . . . . . . . . . . .", 
-		". . . . . . W . . . . . . . . . . . . .", 
-		". . S . . . W . . . . . . . . . . . . .", 
-		". . . . . . W . . . . . . . . . . . . .", 
-		". . . . . . W . . . . . . . . . . . . .", 
-		". . . . . . W . . . . . . . . . . . . .", 
-		". . . W W W W . . . . . . . . . . . . .", 
-		". . . . . . . . . . . . . . . . . E . ."
+			". . . . . . . . . . . . . . . . . . . .",
+			". . . W W W W . . . . . . . . . . . . .",
+			". . . . . . W . . . . . . . . . . . . .",
+			". . . . . . W . . . . . . . . . . . . .",
+			". . S . . . W . . . . . . . . . . . . .",
+			". . . . . . W . . . . . . . . . . . . .",
+			". . . . . . W . . . . . . . . . . . . .",
+			". . . . . . W . . . . . . . . . . . . .",
+			". . . W W W W . . . . . . . . . . . . .",
+			". . . . . . . . . . . . . . . . . E . ."
 	};
-	
+
 	// 地图
 	static char[][] MAP    = new char[S_MAP[0].replace(" ", "").length()][S_MAP.length];
 	// 地图最大尺寸
@@ -33,14 +34,11 @@ public class Main
 	static Point START_PNT = null;
 	// 终点
 	static Point END_PNT   = null;
-	
-	public static void main(String[] args)
-	{
+
+	public static void main(String[] args) {
 		genMap();
 		printMap();
-		
 		search();
-		
 		printMap();
 	}
 

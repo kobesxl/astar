@@ -1,5 +1,5 @@
 package com.simplemain.astar;
-
+import com.simplemain.astar.Point;
 
 public class Data
 {
